@@ -1,0 +1,13 @@
+{
+  "restartable": "rs",
+  "ignore":[
+    ".git",
+    "node_modules/**/node_modules",
+    "**/client.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "verbose": false,
+  "ext": "js"
+}
