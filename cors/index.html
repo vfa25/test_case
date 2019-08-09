@@ -7,5 +7,20 @@
   <title>Document</title>
 </head>
 <body>
+  <div>
+    <button>
+      <a href="/">返回主菜单</a>
+    </button>
+    <button>
+      <a href="https://github.com/vfa25/test_case/tree/master/cors">返回Github</a>
+    </button>
+  </div>
+  <h4>验证cookie跨域，Ajax跨域。需打开控制台</h4>
+  <h4>结论：</h4>
+  <p>浏览器端：XMLHttpRequest.withCredentials 设置为 true。</p>
+  <p>
+    Server端：Access-Control-Allow-Origin设置且仅能指定域名，星号*无效；
+    Access-Control-Allow-Credentials 设置为 true。
+  </p>
 </body>
 </html>

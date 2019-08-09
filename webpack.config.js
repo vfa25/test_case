@@ -51,7 +51,7 @@ module.exports = (env, argv) => {
     }
     return entries
   }, [])
-  
+
 
   if (argv.mode === 'development') {
     config.mode = 'development'
@@ -59,10 +59,11 @@ module.exports = (env, argv) => {
 
     config.output = {
       path: path.join(__dirname, '__build__'),
-      filename: '[name].js',
-      publicPath: '/__build__/'
+      filename: '[name]/index.js',
+      publicPath: '/'
     }
-    config.plugins = config.plugins.concat[
+    config.plugins = [
+      ...config.plugins,
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin()
     ]
@@ -82,7 +83,7 @@ module.exports = (env, argv) => {
         cleanAfterEveryBuildPatterns: ['dist']
       })
     )
-    
+
   }
 
   return config;

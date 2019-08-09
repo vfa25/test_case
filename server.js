@@ -17,7 +17,7 @@ const dev = process.env.NODE_ENV === 'development';
 
 // // 基于 stream 的日志写入
 // if (dev) {
-//   // Predefined Formats ,默认标准流 -- stream: process.stdout 
+//   // Predefined Formats ,默认标准流 -- stream: process.stdout
 //   app.use(logger('dev'));
 // } else {
 //   // 写入流
@@ -34,13 +34,14 @@ const dev = process.env.NODE_ENV === 'development';
 if (dev) {
   const compiler = webpack(WebpackConfig(undefined, {mode: 'development'}))
   app.use(webpackDevMiddleware(compiler, {
-    publicPath: '/__build__/',
+    publicPath: '/',
     stats: {
       colors: true,
       chunks: false
     }
   }))
-  
+  // console.log(compiler.outputPath)
+
   app.use(webpackHotMiddleware(compiler))
 }
 
