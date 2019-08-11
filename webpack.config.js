@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
     const entry = path.join(fullDir, 'client.js')
     if (fs.statSync(fullDir).isDirectory() && fs.existsSync(entry)) {
       if (argv.mode === 'development') {
-        entries[dir] = ['webpack-hot-middleware/client', entry]
+        entries[dir] = ['./dev-hot', entry]
       } else {
         entries[dir] = entry
       }
@@ -59,7 +59,7 @@ module.exports = (env, argv) => {
 
     config.output = {
       path: path.join(__dirname, '__build__'),
-      filename: '[name]/index.js',
+      filename: '[name]/[name].[hash].js',
       publicPath: '/'
     }
     config.plugins = [
